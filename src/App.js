@@ -2,13 +2,13 @@ import React from "react";
 import "./App.css";
 
 import AppState from "./context/AppState";
-import { Scrollbars } from "react-custom-scrollbars";
 import CovidDataSearch from "./components/CovidDataSearch.js";
 import { Header } from "semantic-ui-react";
+
 const App = () => {
   return (
     <AppState>
-      <Scrollbars
+      <div
         style={{
           width: "100vw",
           height: "100vh",
@@ -34,7 +34,7 @@ const App = () => {
             </Header>
           </div>
         </div>
-      </Scrollbars>
+      </div>
     </AppState>
   );
 };
