@@ -43,7 +43,7 @@ const CovidDataSearch = () => {
               <Segment
                 style={{
                   backgroundColor: "#90BEC8",
-                  maxHeight: "70vh",
+                  maxHeight: "60vh",
                   overflowY: "scroll",
                   padding: 20,
                 }}

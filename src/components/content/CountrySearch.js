@@ -1,11 +1,41 @@
-import React from "react";
-import { Header, Input } from "semantic-ui-react";
+import React, { useEffect, useState, useContext } from "react";
+import { Header, Input, Button } from "semantic-ui-react";
+import AppContext from "../../context/appContext";
 
 const CountrySearch = () => {
+  const state = useContext(AppContext);
+  const { summaryData } = state;
+  const [countryNames, setCountryNames] = useState(null);
+  const [searchTerms, setSearchTerms] = useState("");
+
+  useEffect(() => {
+    console.log("Data", summaryData);
+    if (!countryNames) {
+      const slugNames = summaryData.Countries.map((i) => i.Slug);
+      setCountryNames(slugNames);
+    }
+  }, [summaryData]);
+
   return (
-    <Header>
-      <Input placeholder="Search..." />
-    </Header>
+    countryNames && (
+      <Header>
+        <Input action placeholder="Country Search...">
+          <input
+            type="text"
+            list="countries"
+            onChange={(e) => setSearchTerms(e.target.value)}
+          />
+          <Button type="submit">Search</Button>
+        </Input>
+        <datalist id="countries">
+          {countryNames.map((i, k) => (
+            <option key={k} value={`${i}`}>
+              {i}
+            </option>
+          ))}
+        </datalist>
+      </Header>
+    )
   );
 };
 
