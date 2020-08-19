@@ -1,26 +1,26 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import "./App.css";
 
-function App() {
+import AppState from "./context/AppState";
+import { Scrollbars } from "react-custom-scrollbars";
+import DataList from "./components/DataList.js";
+
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <AppState>
+      <Scrollbars
+        style={{
+          width: "100vw",
+          height: "100vh",
+          backgroundColor: "#AE854E",
+        }}
+      >
+        <div className="App">
+          <DataList />
+        </div>
+      </Scrollbars>
+    </AppState>
   );
-}
+};
 
 export default App;
