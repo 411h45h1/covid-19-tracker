@@ -4,17 +4,16 @@ import AppContext from "../../context/appContext";
 
 const CountrySearch = () => {
   const state = useContext(AppContext);
-  const { summaryData } = state;
+  const { summaryData, handleCountrySearch } = state;
   const [countryNames, setCountryNames] = useState(null);
   const [searchTerms, setSearchTerms] = useState("");
 
   useEffect(() => {
-    console.log("Data", summaryData);
     if (!countryNames) {
       const slugNames = summaryData.Countries.map((i) => i.Slug);
       setCountryNames(slugNames);
     }
-  }, [summaryData]);
+  }, [summaryData, countryNames]);
 
   return (
     countryNames && (
@@ -25,7 +24,12 @@ const CountrySearch = () => {
             list="countries"
             onChange={(e) => setSearchTerms(e.target.value)}
           />
-          <Button type="submit">Search</Button>
+          <Button
+            type="submit"
+            onClick={() => handleCountrySearch(searchTerms)}
+          >
+            Search
+          </Button>
         </Input>
         <datalist id="countries">
           {countryNames.map((i, k) => (

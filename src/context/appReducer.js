@@ -12,6 +12,13 @@ export default (state, { type, payload }) => {
         showGlobalList: !state.showGlobalList,
       };
 
+    case "UPDATE_COUNTRY_SEARCH":
+      return {
+        ...state,
+        showGlobalList: false,
+        countrySearch: payload,
+      };
+
     default:
       return state;
   }

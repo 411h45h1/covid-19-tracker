@@ -6,6 +6,7 @@ const AppState = (props) => {
   const initialState = {
     summaryData: null,
     showGlobalList: false,
+    countrySearch: null,
   };
   const [state, dispatch] = useReducer(appReducer, initialState);
   const { summaryData } = state;
@@ -30,13 +31,18 @@ const AppState = (props) => {
 
   const onAllCountriesToggle = () => dispatch({ type: "TOGGLE_ALL_COUNTRIES" });
 
+  const handleCountrySearch = (name) =>
+    dispatch({ type: "UPDATE_COUNTRY_SEARCH", payload: name });
+
   return (
     <AppContext.Provider
       value={{
         summaryData: state.summaryData,
         showGlobalList: state.showGlobalList,
+        countrySearch: state.countrySearch,
         onDataSummary,
         onAllCountriesToggle,
+        handleCountrySearch,
       }}
     >
       {props.children}
