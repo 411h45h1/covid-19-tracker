@@ -1,4 +1,4 @@
-import React, { useContext, useEffect } from "react";
+import React, { useContext } from "react";
 import AppContext from "../context/appContext";
 import {
   Grid,
@@ -32,15 +32,7 @@ const correctedNames = (name) =>
 
 const DataList = () => {
   const state = useContext(AppContext);
-  const { summaryData, onDataSummary } = state;
-
-  useEffect(() => {
-    if (!summaryData) {
-      onDataSummary();
-    } else if (summaryData) {
-      console.log("Global Data", summaryData);
-    }
-  }, [summaryData, onDataSummary]);
+  const { summaryData } = state;
 
   const isDataLoaded = () => (summaryData ? false : true);
   return (

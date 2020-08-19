@@ -1,4 +1,4 @@
-import React, { useReducer } from "react";
+import React, { useReducer, useEffect } from "react";
 import AppContext from "./appContext";
 import appReducer from "./appReducer";
 
@@ -7,6 +7,7 @@ const AppState = (props) => {
     summaryData: null,
   };
   const [state, dispatch] = useReducer(appReducer, initialState);
+  const { summaryData } = state;
 
   const onDataSummary = () => {
     fetch("https://api.covid19api.com/summary", {
@@ -19,6 +20,14 @@ const AppState = (props) => {
       })
       .catch((error) => console.log("error", error));
   };
+
+  useEffect(() => {
+    if (!summaryData) {
+      onDataSummary();
+    } else if (summaryData) {
+      console.log("Global Data", summaryData);
+    }
+  }, [summaryData]);
 
   return (
     <AppContext.Provider
