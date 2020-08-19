@@ -18,16 +18,14 @@ const CovidDataSearch = () => {
   };
 
   return (
-    <div style={{ padding: 20 }}>
+    <div style={{ padding: "20px 20px 20px 20px " }}>
       <Segment
         color="brown"
         className="GlobalData"
         inverted
         loading={isDataLoaded()}
       >
-        <Header style={{ fontSize: "5em", color: "black" }}>
-          Gobal Covid-19 Statistics
-        </Header>
+        <Header style={{ fontSize: "3em" }}>Gobal Covid-19 Statistics</Header>
         {summaryData && (
           <>
             <Button toggle active={toggleAll} onClick={() => handleClick()}>

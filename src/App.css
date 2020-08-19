@@ -1,3 +1,8 @@
+.App {
+  background-color: #c89a90;
+  height: 100vh;
+  width: 100vw;
+}
 .Country {
   color: black;
 }
@@ -8,6 +13,7 @@
 
 #link {
   color: #a10202;
+  font-weight: bold;
 }
 
 #link:hover {
