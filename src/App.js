@@ -22,7 +22,7 @@ const App = () => {
             rel="noopener noreferrer"
             href="https://github.com/AhmedAlihashi/covid-19-tracker"
           >
-            Ahmed's Global Covid-19 Tracker
+            Click here for the repository
           </a>
         </div>
       </div>
