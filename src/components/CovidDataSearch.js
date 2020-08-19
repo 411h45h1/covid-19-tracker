@@ -2,18 +2,19 @@ import React, { useContext, useState } from "react";
 import AppContext from "../context/appContext";
 import { Header, Segment, Button } from "semantic-ui-react";
 import GlobalList from "./content/GlobalList";
+import CountrySearch from "./content/CountrySearch";
 
 const CovidDataSearch = () => {
   const state = useContext(AppContext);
   const { summaryData, showGlobalList, onAllCountriesToggle } = state;
-  const [toggleAll, setToggleAll] = useState(false);
+  const [toggleAllCountries, setToggleAllCountries] = useState(false);
 
   const isDataLoaded = () => (summaryData ? false : true);
 
   const handleGlobalList = () => (showGlobalList ? <GlobalList /> : null);
 
   const handleClick = () => {
-    setToggleAll((prevState) => !prevState);
+    setToggleAllCountries((prevState) => !prevState);
     onAllCountriesToggle();
   };
 
@@ -28,9 +29,16 @@ const CovidDataSearch = () => {
         <Header style={{ fontSize: "3em" }}>Gobal Covid-19 Statistics</Header>
         {summaryData && (
           <>
-            <Button toggle active={toggleAll} onClick={() => handleClick()}>
+            <CountrySearch />
+
+            <Button
+              toggle
+              active={toggleAllCountries}
+              onClick={() => handleClick()}
+            >
               All Countries
             </Button>
+
             {showGlobalList ? (
               <Segment
                 style={{
