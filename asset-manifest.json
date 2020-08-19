@@ -1,26 +1,26 @@
 {
   "files": {
     "main.css": "/covid-19-tracker/static/css/main.df940308.chunk.css",
-    "main.js": "/covid-19-tracker/static/js/main.4573d891.chunk.js",
-    "main.js.map": "/covid-19-tracker/static/js/main.4573d891.chunk.js.map",
+    "main.js": "/covid-19-tracker/static/js/main.28f10419.chunk.js",
+    "main.js.map": "/covid-19-tracker/static/js/main.28f10419.chunk.js.map",
     "runtime-main.js": "/covid-19-tracker/static/js/runtime-main.960a8408.js",
     "runtime-main.js.map": "/covid-19-tracker/static/js/runtime-main.960a8408.js.map",
-    "static/css/2.04c648f1.chunk.css": "/covid-19-tracker/static/css/2.04c648f1.chunk.css",
-    "static/js/2.84a61178.chunk.js": "/covid-19-tracker/static/js/2.84a61178.chunk.js",
-    "static/js/2.84a61178.chunk.js.map": "/covid-19-tracker/static/js/2.84a61178.chunk.js.map",
+    "static/css/2.82d6dd44.chunk.css": "/covid-19-tracker/static/css/2.82d6dd44.chunk.css",
+    "static/js/2.18bfb526.chunk.js": "/covid-19-tracker/static/js/2.18bfb526.chunk.js",
+    "static/js/2.18bfb526.chunk.js.map": "/covid-19-tracker/static/js/2.18bfb526.chunk.js.map",
     "index.html": "/covid-19-tracker/index.html",
-    "precache-manifest.7ccc2fdaa6029ac1b732cfdfa076b35a.js": "/covid-19-tracker/precache-manifest.7ccc2fdaa6029ac1b732cfdfa076b35a.js",
+    "precache-manifest.048c7aadf4500ed9c5f8617fd7948335.js": "/covid-19-tracker/precache-manifest.048c7aadf4500ed9c5f8617fd7948335.js",
     "service-worker.js": "/covid-19-tracker/service-worker.js",
-    "static/css/2.04c648f1.chunk.css.map": "/covid-19-tracker/static/css/2.04c648f1.chunk.css.map",
+    "static/css/2.82d6dd44.chunk.css.map": "/covid-19-tracker/static/css/2.82d6dd44.chunk.css.map",
     "static/css/main.df940308.chunk.css.map": "/covid-19-tracker/static/css/main.df940308.chunk.css.map",
-    "static/js/2.84a61178.chunk.js.LICENSE.txt": "/covid-19-tracker/static/js/2.84a61178.chunk.js.LICENSE.txt",
+    "static/js/2.18bfb526.chunk.js.LICENSE.txt": "/covid-19-tracker/static/js/2.18bfb526.chunk.js.LICENSE.txt",
     "static/media/semantic.min.css": "/covid-19-tracker/static/media/outline-icons.ef60a4f6.woff"
   },
   "entrypoints": [
     "static/js/runtime-main.960a8408.js",
-    "static/css/2.04c648f1.chunk.css",
-    "static/js/2.84a61178.chunk.js",
+    "static/css/2.82d6dd44.chunk.css",
+    "static/js/2.18bfb526.chunk.js",
     "static/css/main.df940308.chunk.css",
-    "static/js/main.4573d891.chunk.js"
+    "static/js/main.28f10419.chunk.js"
   ]
 }
