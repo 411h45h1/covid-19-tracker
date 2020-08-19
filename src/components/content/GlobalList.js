@@ -2,25 +2,13 @@ import React, { useContext } from "react";
 import AppContext from "../../context/appContext";
 import { Grid } from "semantic-ui-react";
 import CounrtyItem from "../reusable/CountryItem";
-import { createMedia } from "@artsy/fresnel";
-
-const AppMedia = createMedia({
-  breakpoints: {
-    mobile: 320,
-    tablet: 768,
-    computer: 992,
-    largeScreen: 1400,
-    widescreen: 1920,
-  },
-});
-
-const { Media } = AppMedia;
+import { Media } from "../../config/media";
 
 const GlobalList = () => {
   const state = useContext(AppContext);
   const { summaryData } = state;
   return (
-    <Grid centered style={{ padding: 15 }}>
+    <Grid>
       {/* mobile */}
 
       <Grid.Row as={Media} at="mobile" centered columns={1}>

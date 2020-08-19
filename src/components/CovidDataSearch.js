@@ -23,7 +23,7 @@ const CovidDataSearch = () => {
   };
 
   return (
-    <div style={{ padding: "20px 20px 20px 20px " }}>
+    <div style={{ padding: "20px 20px 20px 20px" }}>
       <Segment
         color="brown"
         className="GlobalData"
@@ -62,7 +62,6 @@ const CovidDataSearch = () => {
                   backgroundColor: "#90BEC8",
                   maxHeight: "60vh",
                   overflowY: "scroll",
-                  padding: 20,
                 }}
               >
                 <GlobalList />
