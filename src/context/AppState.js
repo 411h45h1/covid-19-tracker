@@ -25,8 +25,6 @@ const AppState = (props) => {
   useEffect(() => {
     if (!summaryData) {
       onDataSummary();
-    } else if (summaryData) {
-      console.log("Global Data", summaryData);
     }
   }, [summaryData]);
 

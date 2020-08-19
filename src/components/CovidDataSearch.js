@@ -1,15 +1,21 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import AppContext from "../context/appContext";
-import { Header, Segment } from "semantic-ui-react";
+import { Header, Segment, Button } from "semantic-ui-react";
 import GlobalList from "./content/GlobalList";
-import { Button } from "./reusable";
 
 const CovidDataSearch = () => {
   const state = useContext(AppContext);
   const { summaryData, showGlobalList, onAllCountriesToggle } = state;
+  const [toggleAll, setToggleAll] = useState(false);
 
   const isDataLoaded = () => (summaryData ? false : true);
+
   const handleGlobalList = () => (showGlobalList ? <GlobalList /> : null);
+
+  const handleClick = () => {
+    setToggleAll((prevState) => !prevState);
+    onAllCountriesToggle();
+  };
 
   return (
     <div style={{ padding: 20 }}>
@@ -23,15 +29,23 @@ const CovidDataSearch = () => {
           Gobal Covid-19 Statistics
         </Header>
         {summaryData && (
-          <Segment style={{ backgroundColor: "#90BEC8" }}>
-            <Button
-              active={showGlobalList}
-              onClick={() => onAllCountriesToggle()}
-            >
+          <>
+            <Button toggle active={toggleAll} onClick={() => handleClick()}>
               All Countries
             </Button>
-            {handleGlobalList()}
-          </Segment>
+            {showGlobalList ? (
+              <Segment
+                style={{
+                  backgroundColor: "#90BEC8",
+                  maxHeight: "70vh",
+                  overflowY: "scroll",
+                  padding: 20,
+                }}
+              >
+                {handleGlobalList()}
+              </Segment>
+            ) : null}
+          </>
         )}
       </Segment>
     </div>

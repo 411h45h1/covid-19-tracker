@@ -8,7 +8,7 @@ const GlobalList = () => {
   const { summaryData } = state;
   return (
     <Grid centered style={{ padding: 15 }}>
-      <Grid.Row centered columns={5}>
+      <Grid.Row centered columns={4}>
         {summaryData.Countries.map((i, k) => {
           const addComma = (num) =>
             num.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
