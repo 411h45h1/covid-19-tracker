@@ -6,6 +6,12 @@ export default (state, { type, payload }) => {
         summaryData: payload,
       };
 
+    case "TOGGLE_ALL_COUNTRIES":
+      return {
+        ...state,
+        showGlobalList: !state.showGlobalList,
+      };
+
     default:
       return state;
   }

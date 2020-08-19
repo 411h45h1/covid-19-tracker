@@ -5,6 +5,7 @@ import appReducer from "./appReducer";
 const AppState = (props) => {
   const initialState = {
     summaryData: null,
+    showGlobalList: false,
   };
   const [state, dispatch] = useReducer(appReducer, initialState);
   const { summaryData } = state;
@@ -29,11 +30,15 @@ const AppState = (props) => {
     }
   }, [summaryData]);
 
+  const onAllCountriesToggle = () => dispatch({ type: "TOGGLE_ALL_COUNTRIES" });
+
   return (
     <AppContext.Provider
       value={{
         summaryData: state.summaryData,
+        showGlobalList: state.showGlobalList,
         onDataSummary,
+        onAllCountriesToggle,
       }}
     >
       {props.children}
