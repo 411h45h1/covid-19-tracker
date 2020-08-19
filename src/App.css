@@ -12,3 +12,11 @@
   font-size: calc(10px + 2vmin);
   color: white;
 }
+
+.Country {
+  color: black;
+}
+
+.GlobalData {
+  min-height: 90vh;
+}

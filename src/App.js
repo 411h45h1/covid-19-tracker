@@ -12,7 +12,7 @@ const App = () => {
         style={{
           width: "100vw",
           height: "100vh",
-          backgroundColor: "#AE854E",
+          backgroundColor: "#C89A90",
         }}
       >
         <div className="App">

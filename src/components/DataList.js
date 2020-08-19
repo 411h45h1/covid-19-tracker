@@ -3,11 +3,32 @@ import AppContext from "../context/appContext";
 import {
   Grid,
   Header,
-  Card,
+  Flag,
   Label,
   Segment,
   Statistic,
 } from "semantic-ui-react";
+
+const correctedNames = (name) =>
+  name === "Taiwan, Republic of China"
+    ? "Taiwan"
+    : name === "Taiwan, Republic of China"
+    ? "Taiwan"
+    : name === "Tanzania, United Republic of"
+    ? "Tanzania"
+    : name === "Iran, Islamic Republic of"
+    ? "Iran"
+    : name === "Holy See (Vatican City State)"
+    ? "Vatican City"
+    : name === "Brunei Darussalam"
+    ? "Brunei"
+    : name === "Venezuela (Bolivarian Republic)"
+    ? "Venezuela"
+    : name === "Viet Nam"
+    ? "Vietnam"
+    : name === "Macedonia, Republic of"
+    ? "North Macedonia"
+    : name;
 
 const DataList = () => {
   const state = useContext(AppContext);
@@ -21,59 +42,69 @@ const DataList = () => {
     }
   }, [summaryData, onDataSummary]);
 
+  const isDataLoaded = () => (summaryData ? false : true);
   return (
     <div style={{ padding: 20 }}>
-      <Segment loading={summaryData ? false : true}>
-        <Header as="h3" block>
-          Global Stats
+      <Segment
+        color="brown"
+        className="GlobalData"
+        inverted
+        loading={isDataLoaded()}
+      >
+        <Header style={{ fontSize: "6em", color: "black" }}>
+          Gobal Covid-19 Statistics
         </Header>
         {summaryData && (
-          <Grid centered>
-            <Grid.Row centered columns={4}>
-              {summaryData.Countries.map((i, k) => {
-                return (
-                  <Grid.Column key={k}>
-                    <Segment
-                      inverted
-                      className="OutputItem"
-                      style={{ marginBottom: 10 }}
-                    >
-                      <Label color="purple" size="large" ribbon>
-                        {i.Country}
-                      </Label>
+          <Segment style={{ backgroundColor: "#90BEC8" }}>
+            <Grid centered style={{ padding: 15 }}>
+              <Grid.Row centered columns={5}>
+                {summaryData.Countries.map((i, k) => {
+                  const addComma = (num) =>
+                    num.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
 
-                      <Card>
-                        <Card.Content>
-                          <Statistic.Group inverted size="mini" horizontal>
-                            <Statistic
-                              inverted
-                              color="yellow"
-                              label="Highest Position"
-                              value={i.TotalConfirmed}
+                  return (
+                    <Grid.Column key={k}>
+                      <Segment inverted style={{ marginBottom: 10 }}>
+                        <Label size="big" attached="top">
+                          {correctedNames(i.Country)}
+                          {i.CountryCode === "XK" ||
+                          i.CountryCode === "SS" ? null : (
+                            <Flag
+                              name={i.CountryCode.toLowerCase()}
+                              style={{ marginLeft: 20 }}
                             />
-
-                            <Statistic
-                              inverted
-                              color="yellow"
-                              label="Highest Position"
-                              value={i.TotalRecovered}
-                            />
-
-                            <Statistic
-                              inverted
-                              color="yellow"
-                              label="Highest Position"
-                              value={i.TotalDeaths}
-                            />
+                          )}
+                        </Label>
+                        <div style={{ height: "1vh" }} />
+                        <Segment>
+                          <Statistic.Group size="small" horizontal>
+                            <Statistic>
+                              <Statistic.Value>
+                                {addComma(i.TotalConfirmed)}
+                              </Statistic.Value>
+                              <Statistic.Label>Total Confirmed</Statistic.Label>
+                            </Statistic>
+                            <Statistic color="green">
+                              <Statistic.Value>
+                                {addComma(i.TotalRecovered)}
+                              </Statistic.Value>
+                              <Statistic.Label>Total Recovered</Statistic.Label>
+                            </Statistic>
+                            <Statistic color="red">
+                              <Statistic.Value>
+                                {addComma(i.TotalDeaths)}
+                              </Statistic.Value>
+                              <Statistic.Label>Total Deaths</Statistic.Label>
+                            </Statistic>
                           </Statistic.Group>
-                        </Card.Content>
-                      </Card>
-                    </Segment>
-                  </Grid.Column>
-                );
-              })}
-            </Grid.Row>
-          </Grid>
+                        </Segment>
+                      </Segment>
+                    </Grid.Column>
+                  );
+                })}
+              </Grid.Row>
+            </Grid>
+          </Segment>
         )}
       </Segment>
     </div>
