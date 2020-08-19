@@ -29,7 +29,7 @@ const CovidDataSearch = () => {
         <div style={{ padding: 10 }}>
           <Segment color="brown" inverted loading={isDataLoaded()}>
             <Header style={{ fontSize: "3em" }}>
-              Gobal Covid-19 Statistics
+              Global Covid-19 Statistics
             </Header>
             {summaryData && (
               <>
@@ -75,7 +75,7 @@ const CovidDataSearch = () => {
         <div style={{ padding: 10 }}>
           <Segment color="brown" inverted loading={isDataLoaded()}>
             <Header style={{ fontSize: "5em" }}>
-              Gobal Covid-19 Statistics
+              Global Covid-19 Statistics
             </Header>
             {summaryData && (
               <>
@@ -121,7 +121,7 @@ const CovidDataSearch = () => {
         <div style={{ padding: 5 }}>
           <Segment color="brown" inverted loading={isDataLoaded()}>
             <Header style={{ fontSize: "6em" }}>
-              Gobal Covid-19 Statistics
+              Global Covid-19 Statistics
             </Header>
             {summaryData && (
               <>
