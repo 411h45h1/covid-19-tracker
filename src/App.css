@@ -5,3 +5,11 @@
 .GlobalData {
   min-height: 90vh;
 }
+
+#link {
+  color: #a10202;
+}
+
+#link:hover {
+  color: white;
+}
