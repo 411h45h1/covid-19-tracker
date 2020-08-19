@@ -3,7 +3,7 @@ import "./App.css";
 
 import AppState from "./context/AppState";
 import { Scrollbars } from "react-custom-scrollbars";
-import DataList from "./components/DataList.js";
+import CovidDataSearch from "./components/CovidDataSearch.js";
 
 const App = () => {
   return (
@@ -16,7 +16,7 @@ const App = () => {
         }}
       >
         <div className="App">
-          <DataList />
+          <CovidDataSearch />
         </div>
       </Scrollbars>
     </AppState>
