@@ -1,6 +1,6 @@
 import React, { useContext, useState } from "react";
 import AppContext from "../context/appContext";
-import { Header, Grid, Segment, Button } from "semantic-ui-react";
+import { Header, Segment, Button } from "semantic-ui-react";
 import GlobalList from "./content/GlobalList";
 import CountrySearch from "./content/CountrySearch";
 import SearchedCountry from "./content/SearchedCountry";

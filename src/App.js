@@ -3,7 +3,7 @@ import "./App.css";
 
 import AppState from "./context/AppState";
 import CovidDataSearch from "./components/CovidDataSearch.js";
-import { Media, MediaContextProvider } from "./config/media";
+import { MediaContextProvider } from "./config/media";
 
 const App = () => {
   return (
