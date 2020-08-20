@@ -157,18 +157,21 @@ const GlobalList = () => {
     <div>
       <Label color="black" attached="top left">
         <Button
+          id="buttonToggle"
           toggle
           active={countriesSwitch === "ascendingConfirmedCases" ? true : false}
           onClick={() => reorderConfirmedCases()}
           content="Toggle Confirmed Cases"
         />
         <Button
+          id="buttonToggle"
           toggle
           active={countriesSwitch === "ascendingRecoveredCases" ? true : false}
           onClick={() => reorderRecoveredCases()}
           content="Toggle Recovered"
         />
         <Button
+          id="buttonToggle"
           toggle
           active={countriesSwitch === "ascendingDeathsCases" ? true : false}
           onClick={() => reorderDeathsCases()}
