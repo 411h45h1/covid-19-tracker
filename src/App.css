@@ -16,6 +16,11 @@
   color: white;
 }
 
+#allCountriesButton:hover {
+  color: black;
+  background-color: #c89a90;
+}
+
 #buttonToggle:hover {
   color: black;
   background-color: #c89a90;

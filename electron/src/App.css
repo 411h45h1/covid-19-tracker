@@ -24,6 +24,15 @@
   color: white;
 }
 
+#allCountriesButton {
+  -webkit-app-region: no-drag;
+}
+
+#allCountriesButton:hover {
+  color: black;
+  background-color: #c89a90;
+}
+
 #buttonToggle {
   -webkit-app-region: no-drag;
 }

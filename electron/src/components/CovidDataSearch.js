@@ -55,7 +55,7 @@ const CovidDataSearch = () => {
                 <CountrySearch />
 
                 <Button
-                  id="NoDrag"
+                  id="allCountriesButton"
                   toggle
                   active={toggleAllCountries}
                   onClick={() => handleClick()}
@@ -121,7 +121,7 @@ const CovidDataSearch = () => {
                 <CountrySearch />
 
                 <Button
-                  id="NoDrag"
+                  id="allCountriesButton"
                   toggle
                   active={toggleAllCountries}
                   onClick={() => handleClick()}
@@ -187,7 +187,7 @@ const CovidDataSearch = () => {
                 <CountrySearch />
 
                 <Button
-                  id="NoDrag"
+                  id="allCountriesButton"
                   toggle
                   active={toggleAllCountries}
                   onClick={() => handleClick()}
@@ -254,7 +254,7 @@ const CovidDataSearch = () => {
                 <CountrySearch />
 
                 <Button
-                  id="NoDrag"
+                  id="allCountriesButton"
                   toggle
                   active={toggleAllCountries}
                   onClick={() => handleClick()}
