@@ -28,3 +28,12 @@ cd electron
 npm install or yarn install
 npm run build-win or yarn build~win
 ```
+## ScreenShot
+
+### Website
+
+<img src='./github/website2.png' height='600' width='800' ></img>
+
+### Windows Application
+
+<img src='./github/windowsApp.png' height='550' width='800' ></img>
