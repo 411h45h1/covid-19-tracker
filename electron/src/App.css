@@ -1,0 +1,34 @@
+#NoDrag {
+  -webkit-app-region: no-drag;
+}
+
+#Drag {
+  -webkit-app-region: drag;
+}
+
+.App {
+  background-color: #c89a90;
+  height: 100vh;
+  width: 100vw;
+}
+.Country {
+  color: black;
+}
+
+#link {
+  color: #a10202;
+  font-weight: bold;
+}
+
+#link:hover {
+  color: white;
+}
+
+#buttonToggle {
+  -webkit-app-region: no-drag;
+}
+
+#buttonToggle:hover {
+  color: black;
+  background-color: #c89a90;
+}
