@@ -1,32 +1,180 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import AppContext from "../../context/appContext";
-import { Grid } from "semantic-ui-react";
+import { Grid, Label, Button } from "semantic-ui-react";
 import CounrtyItem from "../reusable/CountryItem";
 import { Media } from "../../config/media";
 
 const GlobalList = () => {
   const state = useContext(AppContext);
   const { summaryData } = state;
+  const [countriesSwitch, setCountriesSwitch] = useState("a");
 
-  let countries = summaryData.Countries;
+  const countries = summaryData.Countries;
 
-  const RenderedCountries = () =>
-    countries.map((i, k) => {
-      return (
-        <Grid.Column key={k}>
-          <CounrtyItem
-            country={correctedNames(i.Country)}
-            countryCode={i.CountryCode.toLowerCase()}
-            totalConfirmed={addComma(i.TotalConfirmed)}
-            totalRecovered={addComma(i.TotalRecovered)}
-            totalDeaths={addComma(i.TotalDeaths)}
-          />
-        </Grid.Column>
-      );
-    });
+  const RenderedCountries = () => {
+    switch (countriesSwitch) {
+      case "ascendingConfirmedCases":
+        return countries
+          .sort((a, b) => (a.TotalConfirmed < b.TotalConfirmed ? 1 : -1))
+          .map((i, k) => {
+            return (
+              <Grid.Column key={k}>
+                <CounrtyItem
+                  country={correctedNames(i.Country)}
+                  countryCode={i.CountryCode.toLowerCase()}
+                  totalConfirmed={addComma(i.TotalConfirmed)}
+                  totalRecovered={addComma(i.TotalRecovered)}
+                  totalDeaths={addComma(i.TotalDeaths)}
+                />
+              </Grid.Column>
+            );
+          });
+      case "descendingConfirmedCases":
+        return countries
+          .sort((a, b) => (a.TotalConfirmed > b.TotalConfirmed ? 1 : -1))
+          .map((i, k) => {
+            return (
+              <Grid.Column key={k}>
+                <CounrtyItem
+                  country={correctedNames(i.Country)}
+                  countryCode={i.CountryCode.toLowerCase()}
+                  totalConfirmed={addComma(i.TotalConfirmed)}
+                  totalRecovered={addComma(i.TotalRecovered)}
+                  totalDeaths={addComma(i.TotalDeaths)}
+                />
+              </Grid.Column>
+            );
+          });
+      case "ascendingRecoveredCases":
+        return countries
+          .sort((a, b) => (a.TotalRecovered < b.TotalRecovered ? 1 : -1))
+          .map((i, k) => {
+            return (
+              <Grid.Column key={k}>
+                <CounrtyItem
+                  country={correctedNames(i.Country)}
+                  countryCode={i.CountryCode.toLowerCase()}
+                  totalConfirmed={addComma(i.TotalConfirmed)}
+                  totalRecovered={addComma(i.TotalRecovered)}
+                  totalDeaths={addComma(i.TotalDeaths)}
+                />
+              </Grid.Column>
+            );
+          });
+      case "descendingRecoveredCases":
+        return countries
+          .sort((a, b) => (a.TotalRecovered > b.TotalRecovered ? 1 : -1))
+          .map((i, k) => {
+            return (
+              <Grid.Column key={k}>
+                <CounrtyItem
+                  country={correctedNames(i.Country)}
+                  countryCode={i.CountryCode.toLowerCase()}
+                  totalConfirmed={addComma(i.TotalConfirmed)}
+                  totalRecovered={addComma(i.TotalRecovered)}
+                  totalDeaths={addComma(i.TotalDeaths)}
+                />
+              </Grid.Column>
+            );
+          });
+      case "ascendingDeathsCases":
+        return countries
+          .sort((a, b) => (a.TotalDeaths < b.TotalDeaths ? 1 : -1))
+          .map((i, k) => {
+            return (
+              <Grid.Column key={k}>
+                <CounrtyItem
+                  country={correctedNames(i.Country)}
+                  countryCode={i.CountryCode.toLowerCase()}
+                  totalConfirmed={addComma(i.TotalConfirmed)}
+                  totalRecovered={addComma(i.TotalRecovered)}
+                  totalDeaths={addComma(i.TotalDeaths)}
+                />
+              </Grid.Column>
+            );
+          });
+      case "descendingDeathsCases":
+        return countries
+          .sort((a, b) => (a.TotalDeaths > b.TotalDeaths ? 1 : -1))
+          .map((i, k) => {
+            return (
+              <Grid.Column key={k}>
+                <CounrtyItem
+                  country={correctedNames(i.Country)}
+                  countryCode={i.CountryCode.toLowerCase()}
+                  totalConfirmed={addComma(i.TotalConfirmed)}
+                  totalRecovered={addComma(i.TotalRecovered)}
+                  totalDeaths={addComma(i.TotalDeaths)}
+                />
+              </Grid.Column>
+            );
+          });
+      default:
+        return countries.map((i, k) => {
+          return (
+            <Grid.Column key={k}>
+              <CounrtyItem
+                country={correctedNames(i.Country)}
+                countryCode={i.CountryCode.toLowerCase()}
+                totalConfirmed={addComma(i.TotalConfirmed)}
+                totalRecovered={addComma(i.TotalRecovered)}
+                totalDeaths={addComma(i.TotalDeaths)}
+              />
+            </Grid.Column>
+          );
+        });
+    }
+  };
+
+  const reorderConfirmedCases = () =>
+    countriesSwitch !== "ascendingConfirmedCases"
+      ? setCountriesSwitch("ascendingConfirmedCases")
+      : countriesSwitch === "ascendingConfirmedCases"
+      ? setCountriesSwitch("descendingConfirmedCases")
+      : countriesSwitch === "descendingConfirmedCases"
+      ? setCountriesSwitch("ascendingConfirmedCases")
+      : null;
+
+  const reorderRecoveredCases = () =>
+    countriesSwitch !== "ascendingRecoveredCases"
+      ? setCountriesSwitch("ascendingRecoveredCases")
+      : countriesSwitch === "ascendingRecoveredCases"
+      ? setCountriesSwitch("descendingRecoveredCases")
+      : countriesSwitch === "descendingRecoveredCases"
+      ? setCountriesSwitch("ascendingRecoveredCases")
+      : null;
+
+  const reorderDeathsCases = () =>
+    countriesSwitch !== "ascendingDeathsCases"
+      ? setCountriesSwitch("ascendingDeathsCases")
+      : countriesSwitch === "ascendingDeathsCases"
+      ? setCountriesSwitch("descendingDeathsCases")
+      : countriesSwitch === "descendingDeathsCases"
+      ? setCountriesSwitch("ascendingDeathsCases")
+      : null;
 
   return (
-    <>
+    <div>
+      <Label color="black" attached="top left">
+        <Button
+          toggle
+          active={countriesSwitch === "ascendingConfirmedCases" ? true : false}
+          onClick={() => reorderConfirmedCases()}
+          content="Toggle Confirmed Cases"
+        />
+        <Button
+          toggle
+          active={countriesSwitch === "ascendingRecoveredCases" ? true : false}
+          onClick={() => reorderRecoveredCases()}
+          content="Toggle Recovered"
+        />
+        <Button
+          toggle
+          active={countriesSwitch === "ascendingDeathsCases" ? true : false}
+          onClick={() => reorderDeathsCases()}
+          content="Toggle Casualties"
+        />
+      </Label>
       <Grid as={Media} at="mobile">
         <Grid.Row centered columns={1}>
           <RenderedCountries />
@@ -55,7 +203,7 @@ const GlobalList = () => {
           <RenderedCountries />
         </Grid.Row>
       </Grid>
-    </>
+    </div>
   );
 };
 
