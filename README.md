@@ -15,3 +15,16 @@ git clone https://github.com/AhmedAlihashi/covid-19-tracker.git
 npm install or yarn install
 npm run start or yarn start
 ```
+
+## Windows Application
+
+You can download the pre-built version [here](https://mega.nz/file/KmYiTIQa#9f-22seI480uAWvMO6105XFrn7UM8v99qXjmICkUhd8)
+
+Alternativly you can build your own version locally   
+
+```
+git clone https://github.com/AhmedAlihashi/covid-19-tracker.git
+cd electron
+npm install or yarn install
+npm run build-win or yarn build~win
+```
