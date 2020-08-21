@@ -40,7 +40,7 @@ const CovidDataSearch = () => {
                     attached="top"
                     onClick={() => setToggleGlobalStats(!toggleGlobalStats)}
                   >
-                    {`Latest Global Stats: Confirmed Cases: ${addComma(
+                    {`Latest 🌎 Stats: Confirmed Cases: ${addComma(
                       summaryData.Global.NewConfirmed
                     )} | Recovered Cases: ${addComma(
                       summaryData.Global.NewRecovered
@@ -56,11 +56,11 @@ const CovidDataSearch = () => {
                     attached="top"
                     onClick={() => setToggleGlobalStats(!toggleGlobalStats)}
                   >
-                    {`Global Stats: Confirmed Cases: ${addComma(
+                    {`🌎 Confirmed Cases: ${addComma(
                       summaryData.Global.TotalConfirmed
-                    )} | Recovered Cases: ${addComma(
+                    )} | 🌎 Recovered Cases: ${addComma(
                       summaryData.Global.TotalRecovered
-                    )} | Reported Casualties: ${addComma(
+                    )} | 🌎 Reported Casualties: ${addComma(
                       summaryData.Global.TotalDeaths
                     )}`}
                   </Label>
@@ -151,7 +151,7 @@ const CovidDataSearch = () => {
                     attached="top"
                     onClick={() => setToggleGlobalStats(!toggleGlobalStats)}
                   >
-                    {`Latest Global Stats: Confirmed Cases: ${addComma(
+                    {`Latest 🌎 Stats: Confirmed Cases: ${addComma(
                       summaryData.Global.NewConfirmed
                     )} | Recovered Cases: ${addComma(
                       summaryData.Global.NewRecovered
@@ -168,11 +168,12 @@ const CovidDataSearch = () => {
                     attached="top"
                     onClick={() => setToggleGlobalStats(!toggleGlobalStats)}
                   >
-                    {`Total Global Stats: Confirmed Cases: ${addComma(
-                      summaryData.Global.TotalConfirmed
-                    )} | Recovered Cases: ${addComma(
+                    {`🌎
+ Confirmed Cases: ${addComma(
+   summaryData.Global.TotalConfirmed
+ )} | 🌎 Recovered Cases: ${addComma(
                       summaryData.Global.TotalRecovered
-                    )} | Reported Casualties: ${addComma(
+                    )} | 🌎 Reported Casualties: ${addComma(
                       summaryData.Global.TotalDeaths
                     )}`}
                   </Label>
@@ -272,7 +273,7 @@ const CovidDataSearch = () => {
                     attached="top"
                     onClick={() => setToggleGlobalStats(!toggleGlobalStats)}
                   >
-                    {`Latest Global Stats: Confirmed Cases: ${addComma(
+                    {`Latest 🌎 Stats: Confirmed Cases: ${addComma(
                       summaryData.Global.NewConfirmed
                     )} | Recovered Cases: ${addComma(
                       summaryData.Global.NewRecovered
@@ -289,11 +290,12 @@ const CovidDataSearch = () => {
                     attached="top"
                     onClick={() => setToggleGlobalStats(!toggleGlobalStats)}
                   >
-                    {`Total Global Stats: Confirmed Cases: ${addComma(
-                      summaryData.Global.TotalConfirmed
-                    )} | Recovered Cases: ${addComma(
+                    {`🌎
+ Confirmed Cases: ${addComma(
+   summaryData.Global.TotalConfirmed
+ )} | 🌎 Recovered Cases: ${addComma(
                       summaryData.Global.TotalRecovered
-                    )} | Reported Casualties: ${addComma(
+                    )} | 🌎 Reported Casualties: ${addComma(
                       summaryData.Global.TotalDeaths
                     )}`}
                   </Label>
@@ -393,7 +395,7 @@ const CovidDataSearch = () => {
                     attached="top"
                     onClick={() => setToggleGlobalStats(!toggleGlobalStats)}
                   >
-                    {`Latest Global Stats: Confirmed Cases: ${addComma(
+                    {`Latest 🌎 Stats: Confirmed Cases: ${addComma(
                       summaryData.Global.NewConfirmed
                     )} | Recovered Cases: ${addComma(
                       summaryData.Global.NewRecovered
@@ -410,11 +412,12 @@ const CovidDataSearch = () => {
                     attached="top"
                     onClick={() => setToggleGlobalStats(!toggleGlobalStats)}
                   >
-                    {`Total Global Stats: Confirmed Cases: ${addComma(
-                      summaryData.Global.TotalConfirmed
-                    )} | Recovered Cases: ${addComma(
+                    {`🌎
+ Confirmed Cases: ${addComma(
+   summaryData.Global.TotalConfirmed
+ )} | 🌎 Recovered Cases: ${addComma(
                       summaryData.Global.TotalRecovered
-                    )} | Reported Casualties: ${addComma(
+                    )} | 🌎 Reported Casualties: ${addComma(
                       summaryData.Global.TotalDeaths
                     )}`}
                   </Label>

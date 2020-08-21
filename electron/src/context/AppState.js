@@ -18,7 +18,6 @@ const AppState = (props) => {
     })
       .then(async (response) => {
         let res = await response.json();
-        console.log("data", res);
         dispatch({ type: "LOAD_COVID19_COUNTRY_DATA", payload: res });
       })
       .catch((error) => console.log("error", error));
