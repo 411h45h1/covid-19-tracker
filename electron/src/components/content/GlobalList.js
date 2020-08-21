@@ -6,7 +6,7 @@ import { Media } from "../../config/media";
 
 const GlobalList = () => {
   const state = useContext(AppContext);
-  const { summaryData, addComma } = state;
+  const { summaryData } = state;
   const [countriesSwitch, setCountriesSwitch] = useState("a");
 
   const countries = summaryData.Countries;
@@ -22,9 +22,9 @@ const GlobalList = () => {
                 <CounrtyItem
                   country={correctedNames(i.Country)}
                   countryCode={i.CountryCode.toLowerCase()}
-                  totalConfirmed={addComma(i.TotalConfirmed)}
-                  totalRecovered={addComma(i.TotalRecovered)}
-                  totalDeaths={addComma(i.TotalDeaths)}
+                  totalConfirmed={i.TotalConfirmed}
+                  totalRecovered={i.TotalRecovered}
+                  totalDeaths={i.TotalDeaths}
                 />
               </Grid.Column>
             );
@@ -38,9 +38,9 @@ const GlobalList = () => {
                 <CounrtyItem
                   country={correctedNames(i.Country)}
                   countryCode={i.CountryCode.toLowerCase()}
-                  totalConfirmed={addComma(i.TotalConfirmed)}
-                  totalRecovered={addComma(i.TotalRecovered)}
-                  totalDeaths={addComma(i.TotalDeaths)}
+                  totalConfirmed={i.TotalConfirmed}
+                  totalRecovered={i.TotalRecovered}
+                  totalDeaths={i.TotalDeaths}
                 />
               </Grid.Column>
             );
@@ -54,9 +54,9 @@ const GlobalList = () => {
                 <CounrtyItem
                   country={correctedNames(i.Country)}
                   countryCode={i.CountryCode.toLowerCase()}
-                  totalConfirmed={addComma(i.TotalConfirmed)}
-                  totalRecovered={addComma(i.TotalRecovered)}
-                  totalDeaths={addComma(i.TotalDeaths)}
+                  totalConfirmed={i.TotalConfirmed}
+                  totalRecovered={i.TotalRecovered}
+                  totalDeaths={i.TotalDeaths}
                 />
               </Grid.Column>
             );
@@ -70,9 +70,9 @@ const GlobalList = () => {
                 <CounrtyItem
                   country={correctedNames(i.Country)}
                   countryCode={i.CountryCode.toLowerCase()}
-                  totalConfirmed={addComma(i.TotalConfirmed)}
-                  totalRecovered={addComma(i.TotalRecovered)}
-                  totalDeaths={addComma(i.TotalDeaths)}
+                  totalConfirmed={i.TotalConfirmed}
+                  totalRecovered={i.TotalRecovered}
+                  totalDeaths={i.TotalDeaths}
                 />
               </Grid.Column>
             );
@@ -86,9 +86,9 @@ const GlobalList = () => {
                 <CounrtyItem
                   country={correctedNames(i.Country)}
                   countryCode={i.CountryCode.toLowerCase()}
-                  totalConfirmed={addComma(i.TotalConfirmed)}
-                  totalRecovered={addComma(i.TotalRecovered)}
-                  totalDeaths={addComma(i.TotalDeaths)}
+                  totalConfirmed={i.TotalConfirmed}
+                  totalRecovered={i.TotalRecovered}
+                  totalDeaths={i.TotalDeaths}
                 />
               </Grid.Column>
             );
@@ -102,9 +102,9 @@ const GlobalList = () => {
                 <CounrtyItem
                   country={correctedNames(i.Country)}
                   countryCode={i.CountryCode.toLowerCase()}
-                  totalConfirmed={addComma(i.TotalConfirmed)}
-                  totalRecovered={addComma(i.TotalRecovered)}
-                  totalDeaths={addComma(i.TotalDeaths)}
+                  totalConfirmed={i.TotalConfirmed}
+                  totalRecovered={i.TotalRecovered}
+                  totalDeaths={i.TotalDeaths}
                 />
               </Grid.Column>
             );
@@ -116,9 +116,9 @@ const GlobalList = () => {
               <CounrtyItem
                 country={correctedNames(i.Country)}
                 countryCode={i.CountryCode.toLowerCase()}
-                totalConfirmed={addComma(i.TotalConfirmed)}
-                totalRecovered={addComma(i.TotalRecovered)}
-                totalDeaths={addComma(i.TotalDeaths)}
+                totalConfirmed={i.TotalConfirmed}
+                totalRecovered={i.TotalRecovered}
+                totalDeaths={i.TotalDeaths}
               />
             </Grid.Column>
           );

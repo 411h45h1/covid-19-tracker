@@ -113,6 +113,7 @@ const CovidDataSearch = () => {
                   <Segment
                     style={{
                       backgroundColor: "#90BEC8",
+                      marginBottom: 50,
                     }}
                   >
                     <SearchedCountry />
@@ -168,10 +169,9 @@ const CovidDataSearch = () => {
                     attached="top"
                     onClick={() => setToggleGlobalStats(!toggleGlobalStats)}
                   >
-                    {`🌎
- Confirmed Cases: ${addComma(
-   summaryData.Global.TotalConfirmed
- )} | 🌎 Recovered Cases: ${addComma(
+                    {`🌎 Confirmed Cases: ${addComma(
+                      summaryData.Global.TotalConfirmed
+                    )} | 🌎 Recovered Cases: ${addComma(
                       summaryData.Global.TotalRecovered
                     )} | 🌎 Reported Casualties: ${addComma(
                       summaryData.Global.TotalDeaths
@@ -228,7 +228,7 @@ const CovidDataSearch = () => {
                   <Segment
                     style={{
                       backgroundColor: "#90BEC8",
-                      maxHeight: "60vh",
+                      marginBottom: 50,
                     }}
                   >
                     <SearchedCountry />
@@ -350,7 +350,7 @@ const CovidDataSearch = () => {
                   <Segment
                     style={{
                       backgroundColor: "#90BEC8",
-                      maxHeight: "60vh",
+                      marginBottom: 50,
                     }}
                   >
                     <SearchedCountry />
@@ -473,7 +473,7 @@ const CovidDataSearch = () => {
                   <Segment
                     style={{
                       backgroundColor: "#90BEC8",
-                      maxHeight: "60vh",
+                      marginBottom: 50,
                     }}
                   >
                     <SearchedCountry />

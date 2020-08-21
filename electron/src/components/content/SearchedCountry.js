@@ -18,21 +18,19 @@ const SearchedCountry = () => {
   }, [countrySearch, summaryData.Countries]);
 
   return country ? (
-    <Grid centered style={{ padding: 15 }}>
+    <Grid centered style={{ padding: 10 }}>
       <Grid.Column>
         <CounrtyItem
           country={correctedNames(country.Country)}
           countryCode={country.CountryCode.toLowerCase()}
-          totalConfirmed={addComma(country.TotalConfirmed)}
-          totalRecovered={addComma(country.TotalRecovered)}
-          totalDeaths={addComma(country.TotalDeaths)}
+          totalConfirmed={country.TotalConfirmed}
+          totalRecovered={country.TotalRecovered}
+          totalDeaths={country.TotalDeaths}
         />
       </Grid.Column>
     </Grid>
   ) : null;
 };
-
-const addComma = (num) => num.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
 
 const correctedNames = (name) =>
   name === "Taiwan, Republic of China"
