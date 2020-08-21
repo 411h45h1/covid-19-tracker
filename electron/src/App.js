@@ -6,7 +6,6 @@ import CovidDataSearch from "./components/CovidDataSearch.js";
 import { MediaContextProvider } from "./config/media";
 
 const App = () => {
-  console.log("window", "H:", window.innerHeight, "W:", window.innerWidth);
   return (
     <AppState>
       <MediaContextProvider>

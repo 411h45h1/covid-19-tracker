@@ -1,6 +1,6 @@
 import React, { useContext, useState } from "react";
 import AppContext from "../context/appContext";
-import { Header, Segment, Button } from "semantic-ui-react";
+import { Header, Segment, Label, Button } from "semantic-ui-react";
 import GlobalList from "./content/GlobalList";
 import CountrySearch from "./content/CountrySearch";
 import SearchedCountry from "./content/SearchedCountry";
@@ -28,6 +28,13 @@ const CovidDataSearch = () => {
       <Media at="mobile">
         <div style={{ padding: 10 }}>
           <Segment id="Drag" color="brown" inverted loading={isDataLoaded()}>
+            {summaryData && (
+              <Label id="NoDrag" color="black" attached="bottom right">
+                {`Date of Reported Data: ${new Date(
+                  Date.parse(summaryData.Date)
+                )}`}
+              </Label>
+            )}
             <Header as="h3" textAlign="right">
               <Button.Group id="NoDrag" floated="right">
                 <Button
@@ -95,6 +102,13 @@ const CovidDataSearch = () => {
       <Media at="tablet">
         <div style={{ padding: 10 }}>
           <Segment id="Drag" color="brown" inverted loading={isDataLoaded()}>
+            {summaryData && (
+              <Label id="NoDrag" color="black" attached="bottom right">
+                {`Date of Reported Data: ${new Date(
+                  Date.parse(summaryData.Date)
+                )}`}
+              </Label>
+            )}
             <Header as="h3" textAlign="right">
               <Button.Group id="NoDrag" floated="right">
                 <Button
@@ -146,7 +160,7 @@ const CovidDataSearch = () => {
                     id="NoDrag"
                     style={{
                       backgroundColor: "#90BEC8",
-                      maxHeight: "50vh",
+                      maxHeight: "47vh",
                       overflowY: "scroll",
                     }}
                   >
@@ -161,6 +175,13 @@ const CovidDataSearch = () => {
       <Media at="computer">
         <div style={{ padding: 10 }}>
           <Segment id="Drag" color="brown" inverted loading={isDataLoaded()}>
+            {summaryData && (
+              <Label id="NoDrag" color="black" attached="bottom right">
+                {`Date of Reported Data: ${new Date(
+                  Date.parse(summaryData.Date)
+                )}`}
+              </Label>
+            )}
             <Header as="h3" textAlign="right">
               <Button.Group id="NoDrag" floated="right">
                 <Button
@@ -212,7 +233,7 @@ const CovidDataSearch = () => {
                     id="NoDrag"
                     style={{
                       backgroundColor: "#90BEC8",
-                      maxHeight: "50vh",
+                      maxHeight: "47vh",
                       overflowY: "scroll",
                     }}
                   >
@@ -227,6 +248,13 @@ const CovidDataSearch = () => {
       <Media greaterThan="computer">
         <div style={{ padding: 5 }}>
           <Segment id="Drag" color="brown" inverted loading={isDataLoaded()}>
+            {summaryData && (
+              <Label id="NoDrag" color="black" attached="bottom right">
+                {`Date of Reported Data: ${new Date(
+                  Date.parse(summaryData.Date)
+                )}`}
+              </Label>
+            )}
             <Header as="h3" textAlign="right">
               <Button.Group id="NoDrag" floated="right">
                 <Button
@@ -279,7 +307,7 @@ const CovidDataSearch = () => {
                     id="NoDrag"
                     style={{
                       backgroundColor: "#90BEC8",
-                      height: "63vh",
+                      height: "60vh",
                       overflowY: "scroll",
                     }}
                   >
