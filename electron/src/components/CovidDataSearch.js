@@ -66,7 +66,7 @@ const CovidDataSearch = () => {
                   </Label>
                 )}
 
-                <Label id="NoDrag" color="black" attached="bottom">
+                <Label className="TimeLabel" color="black" attached="bottom">
                   {`Date of Reported Data: ${new Date(
                     Date.parse(summaryData.Date)
                   )}`}
@@ -178,7 +178,11 @@ const CovidDataSearch = () => {
                   </Label>
                 )}
 
-                <Label id="NoDrag" color="black" attached="bottom right">
+                <Label
+                  className="TimeLabel"
+                  color="black"
+                  attached="bottom right"
+                >
                   {`Date of Reported Data: ${new Date(
                     Date.parse(summaryData.Date)
                   )}`}
@@ -295,7 +299,11 @@ const CovidDataSearch = () => {
                   </Label>
                 )}
 
-                <Label id="NoDrag" color="black" attached="bottom right">
+                <Label
+                  className="TimeLabel"
+                  color="black"
+                  attached="bottom right"
+                >
                   {`Date of Reported Data: ${new Date(
                     Date.parse(summaryData.Date)
                   )}`}
@@ -412,7 +420,11 @@ const CovidDataSearch = () => {
                   </Label>
                 )}
 
-                <Label id="NoDrag" color="black" attached="bottom right">
+                <Label
+                  className="TimeLabel"
+                  color="black"
+                  attached="bottom right"
+                >
                   {`Date of Reported Data: ${new Date(
                     Date.parse(summaryData.Date)
                   )}`}
