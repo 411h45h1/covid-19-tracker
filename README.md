@@ -1,6 +1,7 @@
 # Covid-19 Tracker
 
 > Live Website: https://ahmedalihashi.github.io/covid-19-tracker/
+> Windows App Version Download [here](https://mega.nz/file/z6ImUaoa#PnDzLwnf6N3TxgdJnbRjWsBPGOcRmfEeI_Yty4UTZy0) (win32 x64)
 
 This web site queries an [api](https://covid19api.com/) for data related to the Covid-19 and displays it for the user.
 
@@ -18,7 +19,16 @@ npm run start or yarn start
 
 ## Windows Application
 
-You can download the pre-built version [here](https://mega.nz/file/KmYiTIQa#9f-22seI480uAWvMO6105XFrn7UM8v99qXjmICkUhd8)
+You can download the pre-built version 
+
+To create a light dev version
+
+```
+( If you don't have foreman installed: npm install -g foreman )
+git clone https://github.com/AhmedAlihashi/covid-19-tracker.git
+npm install or yarn install
+npm run start or yarn start
+```
 
 Alternativly you can build your own version locally   
 
