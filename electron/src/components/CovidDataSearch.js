@@ -56,7 +56,7 @@ const CovidDataSearch = () => {
                     attached="top"
                     onClick={() => setToggleGlobalStats(!toggleGlobalStats)}
                   >
-                    {`Total Global Stats: Confirmed Cases: ${addComma(
+                    {`Global Stats: Confirmed Cases: ${addComma(
                       summaryData.Global.TotalConfirmed
                     )} | Recovered Cases: ${addComma(
                       summaryData.Global.TotalRecovered
