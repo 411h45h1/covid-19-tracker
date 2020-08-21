@@ -16,6 +16,7 @@ const CovidDataSearch = () => {
     addComma,
   } = state;
   const [toggleAllCountries, setToggleAllCountries] = useState(false);
+  const [toggleGlobalStats, setToggleGlobalStats] = useState(true);
 
   const isDataLoaded = () => (summaryData ? false : true);
 
@@ -31,15 +32,39 @@ const CovidDataSearch = () => {
           <Segment id="Drag" color="brown" inverted loading={isDataLoaded()}>
             {summaryData && (
               <>
-                <Label color="black" attached="top">
-                  {`Latest Global Stats: Confirmed Cases: ${addComma(
-                    summaryData.Global.NewConfirmed
-                  )} | Recovered Cases: ${addComma(
-                    summaryData.Global.NewRecovered
-                  )} | Reported Casualties: ${addComma(
-                    summaryData.Global.NewDeaths
-                  )}`}
-                </Label>
+                {toggleGlobalStats ? (
+                  <Label
+                    id="NoDrag"
+                    as="a"
+                    color="black"
+                    attached="top"
+                    onClick={() => setToggleGlobalStats(!toggleGlobalStats)}
+                  >
+                    {`Latest Global Stats: Confirmed Cases: ${addComma(
+                      summaryData.Global.NewConfirmed
+                    )} | Recovered Cases: ${addComma(
+                      summaryData.Global.NewRecovered
+                    )} | Reported Casualties: ${addComma(
+                      summaryData.Global.NewDeaths
+                    )}`}
+                  </Label>
+                ) : (
+                  <Label
+                    id="NoDrag"
+                    as="a"
+                    color="red"
+                    attached="top"
+                    onClick={() => setToggleGlobalStats(!toggleGlobalStats)}
+                  >
+                    {`Total Global Stats: Confirmed Cases: ${addComma(
+                      summaryData.Global.TotalConfirmed
+                    )} | Recovered Cases: ${addComma(
+                      summaryData.Global.TotalRecovered
+                    )} | Reported Casualties: ${addComma(
+                      summaryData.Global.TotalDeaths
+                    )}`}
+                  </Label>
+                )}
 
                 <Label id="NoDrag" color="black" attached="bottom">
                   {`Date of Reported Data: ${new Date(
@@ -117,15 +142,41 @@ const CovidDataSearch = () => {
           <Segment id="Drag" color="brown" inverted loading={isDataLoaded()}>
             {summaryData && (
               <>
-                <Label color="black" size="large" attached="top">
-                  {`Latest Global Stats: Confirmed Cases: ${addComma(
-                    summaryData.Global.NewConfirmed
-                  )} | Recovered Cases: ${addComma(
-                    summaryData.Global.NewRecovered
-                  )} | Reported Casualties: ${addComma(
-                    summaryData.Global.NewDeaths
-                  )}`}{" "}
-                </Label>
+                {toggleGlobalStats ? (
+                  <Label
+                    id="NoDrag"
+                    as="a"
+                    color="black"
+                    size="large"
+                    attached="top"
+                    onClick={() => setToggleGlobalStats(!toggleGlobalStats)}
+                  >
+                    {`Latest Global Stats: Confirmed Cases: ${addComma(
+                      summaryData.Global.NewConfirmed
+                    )} | Recovered Cases: ${addComma(
+                      summaryData.Global.NewRecovered
+                    )} | Reported Casualties: ${addComma(
+                      summaryData.Global.NewDeaths
+                    )}`}
+                  </Label>
+                ) : (
+                  <Label
+                    id="NoDrag"
+                    as="a"
+                    color="red"
+                    size="large"
+                    attached="top"
+                    onClick={() => setToggleGlobalStats(!toggleGlobalStats)}
+                  >
+                    {`Total Global Stats: Confirmed Cases: ${addComma(
+                      summaryData.Global.TotalConfirmed
+                    )} | Recovered Cases: ${addComma(
+                      summaryData.Global.TotalRecovered
+                    )} | Reported Casualties: ${addComma(
+                      summaryData.Global.TotalDeaths
+                    )}`}
+                  </Label>
+                )}
 
                 <Label id="NoDrag" color="black" attached="bottom right">
                   {`Date of Reported Data: ${new Date(
@@ -208,15 +259,41 @@ const CovidDataSearch = () => {
           >
             {summaryData && (
               <>
-                <Label color="black" size="big" attached="top">
-                  {`Latest Global Stats: Confirmed Cases: ${addComma(
-                    summaryData.Global.NewConfirmed
-                  )} | Recovered Cases: ${addComma(
-                    summaryData.Global.NewRecovered
-                  )} | Reported Casualties: ${addComma(
-                    summaryData.Global.NewDeaths
-                  )}`}{" "}
-                </Label>
+                {toggleGlobalStats ? (
+                  <Label
+                    id="NoDrag"
+                    as="a"
+                    color="black"
+                    size="big"
+                    attached="top"
+                    onClick={() => setToggleGlobalStats(!toggleGlobalStats)}
+                  >
+                    {`Latest Global Stats: Confirmed Cases: ${addComma(
+                      summaryData.Global.NewConfirmed
+                    )} | Recovered Cases: ${addComma(
+                      summaryData.Global.NewRecovered
+                    )} | Reported Casualties: ${addComma(
+                      summaryData.Global.NewDeaths
+                    )}`}
+                  </Label>
+                ) : (
+                  <Label
+                    id="NoDrag"
+                    as="a"
+                    color="red"
+                    size="big"
+                    attached="top"
+                    onClick={() => setToggleGlobalStats(!toggleGlobalStats)}
+                  >
+                    {`Total Global Stats: Confirmed Cases: ${addComma(
+                      summaryData.Global.TotalConfirmed
+                    )} | Recovered Cases: ${addComma(
+                      summaryData.Global.TotalRecovered
+                    )} | Reported Casualties: ${addComma(
+                      summaryData.Global.TotalDeaths
+                    )}`}
+                  </Label>
+                )}
 
                 <Label id="NoDrag" color="black" attached="bottom right">
                   {`Date of Reported Data: ${new Date(
@@ -299,15 +376,41 @@ const CovidDataSearch = () => {
           >
             {summaryData && (
               <>
-                <Label color="black" size="massive" attached="top">
-                  {`Latest Global Stats: Confirmed Cases: ${addComma(
-                    summaryData.Global.NewConfirmed
-                  )} | Recovered Cases: ${addComma(
-                    summaryData.Global.NewRecovered
-                  )} | Reported Casualties: ${addComma(
-                    summaryData.Global.NewDeaths
-                  )}`}{" "}
-                </Label>
+                {toggleGlobalStats ? (
+                  <Label
+                    id="NoDrag"
+                    as="a"
+                    color="black"
+                    size="massive"
+                    attached="top"
+                    onClick={() => setToggleGlobalStats(!toggleGlobalStats)}
+                  >
+                    {`Latest Global Stats: Confirmed Cases: ${addComma(
+                      summaryData.Global.NewConfirmed
+                    )} | Recovered Cases: ${addComma(
+                      summaryData.Global.NewRecovered
+                    )} | Reported Casualties: ${addComma(
+                      summaryData.Global.NewDeaths
+                    )}`}
+                  </Label>
+                ) : (
+                  <Label
+                    id="NoDrag"
+                    as="a"
+                    color="red"
+                    size="massive"
+                    attached="top"
+                    onClick={() => setToggleGlobalStats(!toggleGlobalStats)}
+                  >
+                    {`Total Global Stats: Confirmed Cases: ${addComma(
+                      summaryData.Global.TotalConfirmed
+                    )} | Recovered Cases: ${addComma(
+                      summaryData.Global.TotalRecovered
+                    )} | Reported Casualties: ${addComma(
+                      summaryData.Global.TotalDeaths
+                    )}`}
+                  </Label>
+                )}
 
                 <Label id="NoDrag" color="black" attached="bottom right">
                   {`Date of Reported Data: ${new Date(
