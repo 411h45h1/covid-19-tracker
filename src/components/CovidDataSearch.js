@@ -1,6 +1,6 @@
 import React, { useContext, useState } from "react";
 import AppContext from "../context/appContext";
-import { Header, Segment, Button } from "semantic-ui-react";
+import { Header, Segment, Button, Label } from "semantic-ui-react";
 import GlobalList from "./content/GlobalList";
 import CountrySearch from "./content/CountrySearch";
 import SearchedCountry from "./content/SearchedCountry";
@@ -28,6 +28,13 @@ const CovidDataSearch = () => {
       <Media at="mobile">
         <div style={{ padding: 10 }}>
           <Segment color="brown" inverted loading={isDataLoaded()}>
+            {summaryData && (
+              <Label id="NoDrag" color="black" attached="bottom right">
+                {`Date of Reported Data: ${new Date(
+                  Date.parse(summaryData.Date)
+                )}`}
+              </Label>
+            )}
             <Header style={{ fontSize: "3em" }}>
               Global Covid-19 Statistics
             </Header>
@@ -75,7 +82,14 @@ const CovidDataSearch = () => {
       <Media at="tablet">
         <div style={{ padding: 10 }}>
           <Segment color="brown" inverted loading={isDataLoaded()}>
-            <Header style={{ fontSize: "5em" }}>
+            {summaryData && (
+              <Label id="NoDrag" color="black" attached="bottom right">
+                {`Date of Reported Data: ${new Date(
+                  Date.parse(summaryData.Date)
+                )}`}
+              </Label>
+            )}
+            <Header style={{ fontSize: "4em" }}>
               Global Covid-19 Statistics
             </Header>
             {summaryData && (
@@ -107,7 +121,7 @@ const CovidDataSearch = () => {
                   <Segment
                     style={{
                       backgroundColor: "#90BEC8",
-                      maxHeight: "63vh",
+                      maxHeight: "58vh",
                       overflowY: "scroll",
                     }}
                   >
@@ -122,6 +136,13 @@ const CovidDataSearch = () => {
       <Media greaterThan="tablet">
         <div style={{ padding: 5 }}>
           <Segment color="brown" inverted loading={isDataLoaded()}>
+            {summaryData && (
+              <Label id="NoDrag" color="black" attached="bottom right">
+                {`Date of Reported Data: ${new Date(
+                  Date.parse(summaryData.Date)
+                )}`}
+              </Label>
+            )}
             <Header style={{ fontSize: "6em" }}>
               Global Covid-19 Statistics
             </Header>
@@ -154,7 +175,7 @@ const CovidDataSearch = () => {
                   <Segment
                     style={{
                       backgroundColor: "#90BEC8",
-                      height: "58vh",
+                      height: "57vh",
                       overflowY: "scroll",
                     }}
                   >
