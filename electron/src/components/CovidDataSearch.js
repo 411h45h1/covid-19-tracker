@@ -13,6 +13,7 @@ const CovidDataSearch = () => {
     showGlobalList,
     onAllCountriesToggle,
     countrySearch,
+    addComma,
   } = state;
   const [toggleAllCountries, setToggleAllCountries] = useState(false);
 
@@ -29,11 +30,23 @@ const CovidDataSearch = () => {
         <div style={{ padding: 10 }}>
           <Segment id="Drag" color="brown" inverted loading={isDataLoaded()}>
             {summaryData && (
-              <Label id="NoDrag" color="black" attached="bottom right">
-                {`Date of Reported Data: ${new Date(
-                  Date.parse(summaryData.Date)
-                )}`}
-              </Label>
+              <>
+                <Label color="black" attached="top">
+                  {`Latest Global Stats: Confirmed Cases: ${addComma(
+                    summaryData.Global.NewConfirmed
+                  )} | Recovered Cases: ${addComma(
+                    summaryData.Global.NewRecovered
+                  )} | Reported Casualties: ${addComma(
+                    summaryData.Global.NewDeaths
+                  )}`}
+                </Label>
+
+                <Label id="NoDrag" color="black" attached="bottom">
+                  {`Date of Reported Data: ${new Date(
+                    Date.parse(summaryData.Date)
+                  )}`}
+                </Label>
+              </>
             )}
             <Header as="h3" textAlign="right">
               <Button.Group id="NoDrag" floated="right">
@@ -66,6 +79,7 @@ const CovidDataSearch = () => {
                   toggle
                   active={toggleAllCountries}
                   onClick={() => handleClick()}
+                  style={{ marginBottom: toggleAllCountries ? 0 : 30 }}
                 >
                   All Countries
                 </Button>
@@ -74,8 +88,6 @@ const CovidDataSearch = () => {
                   <Segment
                     style={{
                       backgroundColor: "#90BEC8",
-                      maxHeight: "60vh",
-                      overflowY: "scroll",
                     }}
                   >
                     <SearchedCountry />
@@ -86,6 +98,7 @@ const CovidDataSearch = () => {
                   <Segment
                     id="NoDrag"
                     style={{
+                      marginBottom: 20,
                       backgroundColor: "#90BEC8",
                       maxHeight: "55vh",
                       overflowY: "scroll",
@@ -103,11 +116,23 @@ const CovidDataSearch = () => {
         <div style={{ padding: 10 }}>
           <Segment id="Drag" color="brown" inverted loading={isDataLoaded()}>
             {summaryData && (
-              <Label id="NoDrag" color="black" attached="bottom right">
-                {`Date of Reported Data: ${new Date(
-                  Date.parse(summaryData.Date)
-                )}`}
-              </Label>
+              <>
+                <Label color="black" size="large" attached="top">
+                  {`Latest Global Stats: Confirmed Cases: ${addComma(
+                    summaryData.Global.NewConfirmed
+                  )} | Recovered Cases: ${addComma(
+                    summaryData.Global.NewRecovered
+                  )} | Reported Casualties: ${addComma(
+                    summaryData.Global.NewDeaths
+                  )}`}{" "}
+                </Label>
+
+                <Label id="NoDrag" color="black" attached="bottom right">
+                  {`Date of Reported Data: ${new Date(
+                    Date.parse(summaryData.Date)
+                  )}`}
+                </Label>
+              </>
             )}
             <Header as="h3" textAlign="right">
               <Button.Group id="NoDrag" floated="right">
@@ -148,7 +173,6 @@ const CovidDataSearch = () => {
                     style={{
                       backgroundColor: "#90BEC8",
                       maxHeight: "60vh",
-                      overflowY: "scroll",
                     }}
                   >
                     <SearchedCountry />
@@ -159,6 +183,7 @@ const CovidDataSearch = () => {
                   <Segment
                     id="NoDrag"
                     style={{
+                      marginBottom: 20,
                       backgroundColor: "#90BEC8",
                       maxHeight: "47vh",
                       overflowY: "scroll",
@@ -174,13 +199,31 @@ const CovidDataSearch = () => {
       </Media>
       <Media at="computer">
         <div style={{ padding: 10 }}>
-          <Segment id="Drag" color="brown" inverted loading={isDataLoaded()}>
+          <Segment
+            id="Drag"
+            color="brown"
+            inverted
+            loading={isDataLoaded()}
+            style={{ paddingTop: 30 }}
+          >
             {summaryData && (
-              <Label id="NoDrag" color="black" attached="bottom right">
-                {`Date of Reported Data: ${new Date(
-                  Date.parse(summaryData.Date)
-                )}`}
-              </Label>
+              <>
+                <Label color="black" size="big" attached="top">
+                  {`Latest Global Stats: Confirmed Cases: ${addComma(
+                    summaryData.Global.NewConfirmed
+                  )} | Recovered Cases: ${addComma(
+                    summaryData.Global.NewRecovered
+                  )} | Reported Casualties: ${addComma(
+                    summaryData.Global.NewDeaths
+                  )}`}{" "}
+                </Label>
+
+                <Label id="NoDrag" color="black" attached="bottom right">
+                  {`Date of Reported Data: ${new Date(
+                    Date.parse(summaryData.Date)
+                  )}`}
+                </Label>
+              </>
             )}
             <Header as="h3" textAlign="right">
               <Button.Group id="NoDrag" floated="right">
@@ -221,7 +264,6 @@ const CovidDataSearch = () => {
                     style={{
                       backgroundColor: "#90BEC8",
                       maxHeight: "60vh",
-                      overflowY: "scroll",
                     }}
                   >
                     <SearchedCountry />
@@ -232,6 +274,7 @@ const CovidDataSearch = () => {
                   <Segment
                     id="NoDrag"
                     style={{
+                      marginBottom: 20,
                       backgroundColor: "#90BEC8",
                       maxHeight: "47vh",
                       overflowY: "scroll",
@@ -246,14 +289,32 @@ const CovidDataSearch = () => {
         </div>
       </Media>
       <Media greaterThan="computer">
-        <div style={{ padding: 5 }}>
-          <Segment id="Drag" color="brown" inverted loading={isDataLoaded()}>
+        <div style={{ padding: 10 }}>
+          <Segment
+            id="Drag"
+            style={{ paddingTop: 45 }}
+            color="brown"
+            inverted
+            loading={isDataLoaded()}
+          >
             {summaryData && (
-              <Label id="NoDrag" color="black" attached="bottom right">
-                {`Date of Reported Data: ${new Date(
-                  Date.parse(summaryData.Date)
-                )}`}
-              </Label>
+              <>
+                <Label color="black" size="massive" attached="top">
+                  {`Latest Global Stats: Confirmed Cases: ${addComma(
+                    summaryData.Global.NewConfirmed
+                  )} | Recovered Cases: ${addComma(
+                    summaryData.Global.NewRecovered
+                  )} | Reported Casualties: ${addComma(
+                    summaryData.Global.NewDeaths
+                  )}`}{" "}
+                </Label>
+
+                <Label id="NoDrag" color="black" attached="bottom right">
+                  {`Date of Reported Data: ${new Date(
+                    Date.parse(summaryData.Date)
+                  )}`}
+                </Label>
+              </>
             )}
             <Header as="h3" textAlign="right">
               <Button.Group id="NoDrag" floated="right">
@@ -295,7 +356,6 @@ const CovidDataSearch = () => {
                     style={{
                       backgroundColor: "#90BEC8",
                       maxHeight: "60vh",
-                      overflowY: "scroll",
                     }}
                   >
                     <SearchedCountry />
@@ -306,8 +366,9 @@ const CovidDataSearch = () => {
                   <Segment
                     id="NoDrag"
                     style={{
+                      marginBottom: 20,
                       backgroundColor: "#90BEC8",
-                      height: "60vh",
+                      height: "56vh",
                       overflowY: "scroll",
                     }}
                   >

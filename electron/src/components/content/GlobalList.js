@@ -6,7 +6,7 @@ import { Media } from "../../config/media";
 
 const GlobalList = () => {
   const state = useContext(AppContext);
-  const { summaryData } = state;
+  const { summaryData, addComma } = state;
   const [countriesSwitch, setCountriesSwitch] = useState("a");
 
   const countries = summaryData.Countries;
@@ -230,7 +230,5 @@ const correctedNames = (name) =>
     : name === "Macedonia, Republic of"
     ? "North Macedonia"
     : name;
-
-const addComma = (num) => num.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
 
 export default GlobalList;

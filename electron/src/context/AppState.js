@@ -18,6 +18,7 @@ const AppState = (props) => {
     })
       .then(async (response) => {
         let res = await response.json();
+        console.log("data", res);
         dispatch({ type: "LOAD_COVID19_COUNTRY_DATA", payload: res });
       })
       .catch((error) => console.log("error", error));
@@ -34,12 +35,16 @@ const AppState = (props) => {
   const handleCountrySearch = (name) =>
     dispatch({ type: "UPDATE_COUNTRY_SEARCH", payload: name });
 
+  const addComma = (num) =>
+    num.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+
   return (
     <AppContext.Provider
       value={{
         summaryData: state.summaryData,
         showGlobalList: state.showGlobalList,
         countrySearch: state.countrySearch,
+        addComma,
         onDataSummary,
         onAllCountriesToggle,
         handleCountrySearch,
