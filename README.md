@@ -2,7 +2,7 @@
 
 > Live Website: https://ahmedalihashi.github.io/covid-19-tracker/   
 
-> Windows App Version Download [here](https://mega.nz/file/6iZyBCpK#mcbLwrDKiGGgwL4RKk3QpzoW4Wbrifq8c0qa0M5xFe0) (win32 x64)
+> Windows App Version Download [here](https://mega.nz/file/X3B0UIJQ#3USZ-hhCzoUI4aBez-uKjwxBvEsAb0EMDlYsD-sD84M) (win32 x64)
 
 This web site queries an [api](https://covid19api.com/) for data related to the Covid-19 and displays it for the user.
 
