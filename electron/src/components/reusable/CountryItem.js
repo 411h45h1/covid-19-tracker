@@ -1,5 +1,5 @@
 import React, { useContext } from "react";
-import { Flag, Label, Segment, Statistic } from "semantic-ui-react";
+import { Header, Label, Segment, Statistic } from "semantic-ui-react";
 import AppContext from "../../context/appContext";
 
 const CountryItem = ({
@@ -21,14 +21,30 @@ const CountryItem = ({
   const casesLeadingToDeath = percent(totalDeaths, totalConfirmed).toFixed(2);
 
   return (
-    <Segment inverted style={{ marginBottom: 10 }}>
+    <Segment inverted style={{ marginBottom: 15 }}>
       <Label size="big" attached="top">
-        {country}
-        {countryCode === "xk" || countryCode === "ss" ? null : (
-          <Flag name={countryCode} style={{ marginLeft: 20 }} />
-        )}
+        <div
+          style={{
+            display: "flex",
+            flexDirection: "row",
+            justifyContent: "space-between",
+            alignItems: "center",
+          }}
+        >
+          <div style={{}}>
+            <p style={{ fontSize: 20, color: "black" }}>{country}</p>
+          </div>
+
+          <div style={{}}>
+            {
+              <img
+                src={`https://www.countryflags.io/${countryCode}/shiny/32.png`}
+              />
+            }
+          </div>
+        </div>
       </Label>
-      <div style={{ height: "1vh" }} />
+      <div style={{ height: "3vh" }} />
       <Segment>
         <Statistic.Group size="small" horizontal>
           <Statistic>
