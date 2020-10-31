@@ -1,6 +1,6 @@
 # Covid-19 Tracker
 
-> Live Website: https://ahmedalihashi.github.io/covid-19-tracker/   
+> Live Website: https://ahmedalihashi.github.io/covid-19-tracker/
 
 > Windows App Version Download [here](https://drive.google.com/file/d/1SROxaMdi_fokQ-FBZtNTICWwCq8osU_K/view?usp=sharing) (win32 x64)
 
@@ -20,18 +20,19 @@ npm run start or yarn start
 
 ## Windows Application
 
-You can download the pre-built version 
+You can download the pre-built version
 
 To create a light dev version
 
 ```
 ( If you don't have foreman installed: npm install -g foreman )
 git clone https://github.com/AhmedAlihashi/covid-19-tracker.git
+cd electron
 npm install or yarn install
 npm run start or yarn start
 ```
 
-Alternativly you can build your own version locally   
+Alternativly you can build your own version locally
 
 ```
 git clone https://github.com/AhmedAlihashi/covid-19-tracker.git
@@ -39,6 +40,7 @@ cd electron
 npm install or yarn install
 npm run build-win or yarn build~win
 ```
+
 ## ScreenShot
 
 ### Website
